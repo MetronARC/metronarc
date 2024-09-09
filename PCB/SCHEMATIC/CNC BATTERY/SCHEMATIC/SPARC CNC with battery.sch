@@ -73,68 +73,6 @@
 </layers>
 <schematic xreflabel="%F%N/%S.%C%R" xrefpart="/%S.%C%R">
 <libraries>
-<library name="MP1584-dc-brick (1)">
-<packages>
-<package name="DC-BRICK">
-<wire x1="0" y1="0" x2="22" y2="0" width="0.127" layer="21"/>
-<wire x1="0" y1="0" x2="0" y2="17" width="0.127" layer="21"/>
-<wire x1="0" y1="17" x2="22" y2="17" width="0.127" layer="21"/>
-<wire x1="22" y1="17" x2="22" y2="0" width="0.127" layer="21"/>
-<pad name="IN1+" x="1.5" y="1.4" drill="0.8" shape="square"/>
-<pad name="IN2+" x="1.5" y="2.8" drill="0.8" shape="square"/>
-<pad name="IN2-" x="1.5" y="15.87" drill="0.8" shape="square"/>
-<pad name="IN1-" x="1.5" y="14.47" drill="0.8" shape="square"/>
-<pad name="OUT2-" x="20.5" y="15.87" drill="0.8" shape="square"/>
-<pad name="OUT1-" x="20.5" y="14.47" drill="0.8" shape="square"/>
-<pad name="OUT1+" x="20.5" y="1.4" drill="0.8" shape="square"/>
-<pad name="OUT2+" x="20.5" y="2.8" drill="0.8" shape="square"/>
-<text x="3.81" y="3.81" size="1.27" layer="21">IN+</text>
-<text x="3.81" y="12.7" size="1.27" layer="21">IN-</text>
-<text x="13.97" y="3.81" size="1.27" layer="21">OUT+</text>
-<text x="13.97" y="12.7" size="1.27" layer="21">OUT-</text>
-<wire x1="7.62" y1="8.89" x2="13.97" y2="8.89" width="0.5" layer="21"/>
-<wire x1="13.97" y1="8.89" x2="12.7" y2="10.16" width="0.5" layer="21"/>
-<wire x1="13.97" y1="8.89" x2="12.7" y2="7.62" width="0.5" layer="21"/>
-</package>
-</packages>
-<symbols>
-<symbol name="MP1584">
-<pin name="VIN+" x="-15.24" y="2.54" direction="in"/>
-<pin name="VIN-" x="-15.24" y="-2.54" direction="in"/>
-<pin name="VOUT-" x="17.78" y="-2.54" direction="out" rot="R180"/>
-<pin name="VOUT+" x="17.78" y="2.54" direction="out" rot="R180"/>
-<wire x1="-7.62" y1="-5.08" x2="-7.62" y2="5.08" width="0.254" layer="94"/>
-<wire x1="-7.62" y1="5.08" x2="10.16" y2="5.08" width="0.254" layer="94"/>
-<wire x1="10.16" y1="5.08" x2="10.16" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="10.16" y1="-5.08" x2="-7.62" y2="-5.08" width="0.254" layer="94"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="MP1584">
-<description>MP1584-dc-brick-pcb
-Step down 
-Input: 4.5V - 28V
-Ouput 0.8V - 25V max. 3A	
-Cheap on ebay</description>
-<gates>
-<gate name="G$1" symbol="MP1584" x="27.94" y="-5.08"/>
-</gates>
-<devices>
-<device name="" package="DC-BRICK">
-<connects>
-<connect gate="G$1" pin="VIN+" pad="IN1+ IN2+"/>
-<connect gate="G$1" pin="VIN-" pad="IN1- IN2-"/>
-<connect gate="G$1" pin="VOUT+" pad="OUT1+ OUT2+"/>
-<connect gate="G$1" pin="VOUT-" pad="OUT1- OUT2-"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="32teeth - TP4056 Module">
 <packages>
 <package name="TP4056-PTH">
@@ -3916,7 +3854,6 @@ type RDH, grid 15 mm</description>
 </class>
 </classes>
 <parts>
-<part name="MP" library="MP1584-dc-brick (1)" deviceset="MP1584" device=""/>
 <part name="TP" library="32teeth - TP4056 Module" deviceset="TP4056-PTH" device=""/>
 <part name="BATTERY" library="pinhead-2" deviceset="PINHD-1X02" device="_2.54"/>
 <part name="IRF" library="IRF4905PBF" deviceset="IRF4905PBF" device=""/>
@@ -3928,13 +3865,16 @@ type RDH, grid 15 mm</description>
 <part name="LED1" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
 <part name="LED2" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
 <part name="INPUT" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
+<part name="VIN+" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
+<part name="VIN-" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
+<part name="OUT+" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
+<part name="OUT-" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
 </parts>
 <sheets>
 <sheet>
 <plain>
 </plain>
 <instances>
-<instance part="MP" gate="G$1" x="119.38" y="86.36" smashed="yes"/>
 <instance part="TP" gate="G$1" x="172.72" y="86.36" smashed="yes"/>
 <instance part="BATTERY" gate="A" x="218.44" y="86.36" smashed="yes">
 <attribute name="NAME" x="212.09" y="92.075" size="1.778" layer="95"/>
@@ -3975,16 +3915,27 @@ type RDH, grid 15 mm</description>
 <attribute name="NAME" x="113.03" y="114.935" size="1.778" layer="95"/>
 <attribute name="VALUE" x="113.03" y="104.14" size="1.778" layer="96"/>
 </instance>
+<instance part="VIN+" gate="G$1" x="76.2" y="101.6" smashed="yes">
+<attribute name="NAME" x="69.85" y="107.315" size="1.778" layer="95"/>
+<attribute name="VALUE" x="69.85" y="96.52" size="1.778" layer="96"/>
+</instance>
+<instance part="VIN-" gate="G$1" x="76.2" y="83.82" smashed="yes">
+<attribute name="NAME" x="69.85" y="89.535" size="1.778" layer="95"/>
+<attribute name="VALUE" x="69.85" y="78.74" size="1.778" layer="96"/>
+</instance>
+<instance part="OUT+" gate="G$1" x="93.98" y="101.6" smashed="yes">
+<attribute name="NAME" x="87.63" y="107.315" size="1.778" layer="95"/>
+<attribute name="VALUE" x="87.63" y="96.52" size="1.778" layer="96"/>
+</instance>
+<instance part="OUT-" gate="G$1" x="93.98" y="83.82" smashed="yes">
+<attribute name="NAME" x="87.63" y="89.535" size="1.778" layer="95"/>
+<attribute name="VALUE" x="87.63" y="78.74" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
 <nets>
 <net name="OUT+" class="0">
-<segment>
-<pinref part="MP" gate="G$1" pin="VOUT+"/>
-<wire x1="137.16" y1="88.9" x2="142.24" y2="88.9" width="0.1524" layer="91"/>
-<label x="144.78" y="86.36" size="1.778" layer="95" rot="R90"/>
-</segment>
 <segment>
 <pinref part="TP" gate="G$1" pin="IN+"/>
 <wire x1="162.56" y1="88.9" x2="160.02" y2="88.9" width="0.1524" layer="91"/>
@@ -4001,6 +3952,16 @@ type RDH, grid 15 mm</description>
 <label x="101.6" y="53.34" size="1.778" layer="95" rot="R90"/>
 <pinref part="DIODA" gate="G$1" pin="A"/>
 </segment>
+<segment>
+<pinref part="OUT+" gate="G$1" pin="2"/>
+<wire x1="91.44" y1="101.6" x2="86.36" y2="101.6" width="0.1524" layer="91"/>
+<label x="83.82" y="99.06" size="1.778" layer="95" rot="R90"/>
+<pinref part="OUT+" gate="G$1" pin="1"/>
+<wire x1="91.44" y1="104.14" x2="86.36" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="104.14" x2="91.44" y2="101.6" width="0.1524" layer="91"/>
+<junction x="91.44" y="104.14"/>
+<junction x="91.44" y="101.6"/>
+</segment>
 </net>
 <net name="B+" class="0">
 <segment>
@@ -4016,22 +3977,22 @@ type RDH, grid 15 mm</description>
 </net>
 <net name="OUT-" class="0">
 <segment>
-<pinref part="MP" gate="G$1" pin="VOUT-"/>
-<wire x1="137.16" y1="83.82" x2="142.24" y2="83.82" width="0.1524" layer="91"/>
-<label x="142.24" y="83.82" size="1.778" layer="95" rot="R270"/>
-</segment>
-<segment>
 <pinref part="TP" gate="G$1" pin="IN-"/>
 <wire x1="162.56" y1="83.82" x2="160.02" y2="83.82" width="0.1524" layer="91"/>
 <label x="154.94" y="83.82" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="OUT-" gate="G$1" pin="2"/>
+<wire x1="91.44" y1="83.82" x2="86.36" y2="83.82" width="0.1524" layer="91"/>
+<label x="86.36" y="81.28" size="1.778" layer="95" rot="R270"/>
+<pinref part="OUT-" gate="G$1" pin="1"/>
+<wire x1="91.44" y1="86.36" x2="86.36" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="86.36" x2="91.44" y2="83.82" width="0.1524" layer="91"/>
+<junction x="91.44" y="86.36"/>
+<junction x="91.44" y="83.82"/>
+</segment>
 </net>
 <net name="+" class="0">
-<segment>
-<pinref part="MP" gate="G$1" pin="VIN+"/>
-<wire x1="104.14" y1="88.9" x2="101.6" y2="88.9" width="0.1524" layer="91"/>
-<label x="101.6" y="88.9" size="1.778" layer="95" rot="R180"/>
-</segment>
 <segment>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="119.38" y1="25.4" x2="116.84" y2="25.4" width="0.1524" layer="91"/>
@@ -4041,6 +4002,16 @@ type RDH, grid 15 mm</description>
 <pinref part="INPUT" gate="G$1" pin="2"/>
 <wire x1="116.84" y1="109.22" x2="114.3" y2="109.22" width="0.1524" layer="91"/>
 <label x="111.76" y="109.22" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="VIN+" gate="G$1" pin="2"/>
+<wire x1="73.66" y1="101.6" x2="66.04" y2="101.6" width="0.1524" layer="91"/>
+<label x="66.04" y="101.6" size="1.778" layer="95"/>
+<pinref part="VIN+" gate="G$1" pin="1"/>
+<wire x1="73.66" y1="104.14" x2="66.04" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="104.14" x2="73.66" y2="101.6" width="0.1524" layer="91"/>
+<junction x="73.66" y="104.14"/>
+<junction x="73.66" y="101.6"/>
 </segment>
 </net>
 <net name="B-" class="0">
@@ -4057,11 +4028,6 @@ type RDH, grid 15 mm</description>
 </net>
 <net name="-" class="0">
 <segment>
-<pinref part="MP" gate="G$1" pin="VIN-"/>
-<wire x1="104.14" y1="83.82" x2="101.6" y2="83.82" width="0.1524" layer="91"/>
-<label x="101.6" y="83.82" size="1.778" layer="95" rot="R180"/>
-</segment>
-<segment>
 <pinref part="INPUT" gate="G$1" pin="1"/>
 <wire x1="116.84" y1="111.76" x2="114.3" y2="111.76" width="0.1524" layer="91"/>
 <label x="111.76" y="111.76" size="1.778" layer="95"/>
@@ -4073,6 +4039,16 @@ type RDH, grid 15 mm</description>
 <pinref part="ESP32" gate="G$1" pin="GND@1"/>
 <wire x1="154.94" y1="33.02" x2="162.56" y2="33.02" width="0.1524" layer="91"/>
 <label x="149.86" y="27.94" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="VIN-" gate="G$1" pin="2"/>
+<wire x1="73.66" y1="83.82" x2="66.04" y2="83.82" width="0.1524" layer="91"/>
+<label x="63.5" y="83.82" size="1.778" layer="95"/>
+<pinref part="VIN-" gate="G$1" pin="1"/>
+<wire x1="73.66" y1="86.36" x2="66.04" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="86.36" x2="73.66" y2="83.82" width="0.1524" layer="91"/>
+<junction x="73.66" y="86.36"/>
+<junction x="73.66" y="83.82"/>
 </segment>
 </net>
 <net name="5V" class="0">
